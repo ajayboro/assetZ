@@ -102,8 +102,6 @@ const Categories = () => {
 		setAddNewUser(true);
 	};
 
-	console.log(newUserDatas);
-
 	return (
 		<Grid container className={classes.container}>
 			<Grid item sm={12} md={12} lg={3}>

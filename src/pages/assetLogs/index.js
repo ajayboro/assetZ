@@ -2,18 +2,12 @@ import React from "react";
 import { Grid, Box } from "@material-ui/core";
 import Sidebar from "../../components/Sidebar/index";
 import DataTable from "../../components/DataTable";
+import { useStyles } from "./styles";
 
 const AssetLogs = () => {
+	const classes = useStyles();
 	return (
-		<Grid
-			container
-			style={{
-				backgroundColor: "#1D3557",
-				color: "#ffffff",
-				padding: 30,
-				height: "100vh",
-			}}
-		>
+		<Grid container className={classes.gridContainer}>
 			<Grid item sm={3}>
 				<Sidebar />
 			</Grid>

@@ -11,40 +11,9 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
 	const classes = useStyles();
 	return (
-		<Box
-			style={{
-				backgroundColor: "#fff",
-				color: "#111",
-				borderRadius: 20,
-				marginRight: 30,
-				width: 300,
-				display: "flex",
-				alignItems: "center",
-				flexDirection: "column",
-				height: "100%",
-			}}
-		>
-			<Box
-				style={{
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					flexDirection: "column",
-					marginTop: 50,
-				}}
-			>
-				<Box
-					style={{
-						width: 40,
-						height: 40,
-						backgroundColor: "#F1FAEE",
-						borderRadius: 50,
-						marginBottom: 10,
-						display: "flex",
-						justifyContent: "center",
-						alignItems: "center",
-					}}
-				>
+		<Box className={classes.boxContainer}>
+			<Box className={classes.logoContainer}>
+				<Box className={classes.iconBox}>
 					<Box>
 						<img src={AIcon} alt="" />
 					</Box>
@@ -54,16 +23,16 @@ const Sidebar = () => {
 				</Box>
 			</Box>
 
-			<Box style={{ marginTop: 50 }}>
+			<Box className={classes.menuContainer}>
 				<Link to="/categories" className={classes.link}>
 					<Box className={classes.btn}>
-						<img className={classes.icon} src={CategoriesIcon} alt="" />{" "}
+						<img className={classes.icon} src={CategoriesIcon} alt="" />
 						Categories
 					</Box>
 				</Link>
 				<Link to="/assetlogs" className={classes.link}>
 					<Box className={classes.btn}>
-						<img className={classes.icon} src={AssetLogsIcon} alt="" />{" "}
+						<img className={classes.icon} src={AssetLogsIcon} alt="" />
 						AssetLogs
 					</Box>
 				</Link>

@@ -18,24 +18,20 @@ import {
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import DateFnsUtils from "@date-io/date-fns";
 
+import { useStyles } from "./styles";
+
 const RightDrawer = ({
 	dataInputs,
 	onChangeDataInputs,
 	handleSubmit,
 	handleDateChange,
 	handleDiscard,
-	// selectedDate,
 }) => {
+	const classes = useStyles();
 	return (
-		<Box style={{ width: 450, height: "100vh", padding: "15px 40px" }}>
-			<Box
-				style={{
-					marginBottom: 50,
-					display: "flex",
-					alignItems: "center",
-				}}
-			>
-				<Box style={{ marginRight: 30 }}>
+		<Box className={classes.boxContainer}>
+			<Box className={classes.header}>
+				<Box className={classes.arrowIcon}>
 					<ArrowBackIcon />
 				</Box>
 				<h2> Asset details</h2>
@@ -44,24 +40,24 @@ const RightDrawer = ({
 				<form>
 					<TextField
 						fullWidth
+						className={classes.textFieldMargin}
 						name="category"
 						onChange={onChangeDataInputs}
 						value={dataInputs.category}
-						style={{ marginBottom: 30 }}
 						label="Category name"
 					/>
 					<TextField
 						fullWidth
+						className={classes.textFieldMargin}
 						name="assetId"
 						onChange={onChangeDataInputs}
 						value={dataInputs.assetId}
-						style={{ marginBottom: 30 }}
 						label="Asset ID"
 					/>
 					<MuiPickersUtilsProvider utils={DateFnsUtils}>
 						<KeyboardDatePicker
 							fullWidth
-							style={{ marginBottom: 30 }}
+							className={classes.textFieldMargin}
 							format="MM/dd/yyyy"
 							label="Date of Assignment"
 							name="dateOfAssignment"
@@ -89,47 +85,36 @@ const RightDrawer = ({
 						name="assignTo"
 						onChange={onChangeDataInputs}
 						value={dataInputs.assignTo}
-						style={{ marginBottom: 30 }}
+						className={classes.textFieldMargin}
 						label="Asset Assigned to"
 					/>
 				</form>
 			</Box>
 			<Box>
 				<Chip
-					style={{ margin: 6, width: 125, height: 35 }}
+					className={classes.chip}
 					label="sheetal72"
 					onDelete
 					color="primary"
 				/>
 				<Chip
-					style={{ margin: 6, width: 125, height: 35 }}
+					className={classes.chip}
 					label="ravigupta5"
 					onDelete
 					color="primary"
 				/>
 			</Box>
-			<Box
-				style={{
-					marginTop: 100,
-					display: "flex",
-					justifyContent: "space-around",
-				}}
-			>
+			<Box className={classes.buttonContainer}>
 				<Button
 					onClick={handleDiscard}
-					style={{
-						width: 160,
-						height: 45,
-						border: "2px solid #1D3557",
-						borderRadius: 12,
-					}}
+					className={classes.buttonDiscard}
 					variant="outlined"
 				>
 					Discard
 				</Button>
 				<Button
 					onClick={handleSubmit}
-					style={{ width: 160, height: 45, borderRadius: 12 }}
+					className={classes.buttonSubmit}
 					variant="contained"
 					color="primary"
 				>
