@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Grid, Box, Button } from "@material-ui/core";
+import { Grid, Box, Button, Drawer } from "@material-ui/core";
 import Sidebar from "../../components/Sidebar/index";
 import AddIcon from "@material-ui/icons/Add";
-import Drawer from "@material-ui/core/Drawer";
 import RightDrawer from "../../components/RightDrawer";
 import WavingHandIcon from "../../assets/icons/wavingHandIcon.svg";
 import { useStyles } from "./styles";
@@ -10,8 +9,6 @@ import Users from "../../components/Form/Users/index";
 
 const Categories = () => {
 	const classes = useStyles();
-
-	const [toggle, setToggle] = useState(false);
 
 	const [dataInputs, setDataInputs] = useState({
 		category: "",
@@ -26,9 +23,11 @@ const Categories = () => {
 		newUserEmail: "",
 	});
 
-	const [addNewUser, setAddNewUser] = useState(false);
-	const [newUserDatas, setNewUserDatas] = useState([]);
 	const [datas, setDatas] = useState([]);
+	const [newUserDatas, setNewUserDatas] = useState([]);
+
+	const [toggle, setToggle] = useState(false);
+	const [addNewUser, setAddNewUser] = useState(false);
 
 	const onChangeDataInputs = e => {
 		const { name, value } = e.target;
@@ -37,7 +36,6 @@ const Categories = () => {
 
 	const onChangeNewUser = e => {
 		const { name, value } = e.target;
-		console.log(name, value);
 		setNewUsersInputs({ ...newUserInputs, [name]: value });
 	};
 
@@ -111,11 +109,10 @@ const Categories = () => {
 			<Grid item sm={12} md={12} lg={3}>
 				<Sidebar />
 			</Grid>
-
 			<Grid item sm={12} md={12} lg={9}>
 				<Box>
 					Welcome <br />
-					<Box style={{ fontSize: 24 }}>
+					<Box className={classes.userName}>
 						Ilya Sahi
 						<img className={classes.wavingHand} src={WavingHandIcon} alt="" />
 					</Box>
@@ -131,14 +128,7 @@ const Categories = () => {
 					</Grid>
 					<Box className={classes.boxContainer}>
 						{datas.map(data => (
-							<Button
-								onClick={() => {
-									toggleDrawer(true);
-								}}
-								className={classes.boxCategory}
-							>
-								{data.category}
-							</Button>
+							<Box className={classes.boxCategory}>{data.category}</Box>
 						))}
 						<Button
 							onClick={() => {
@@ -173,50 +163,27 @@ const Categories = () => {
 									<Box key={index}>
 										<Grid
 											container
-											style={{
-												maxWidth: 560,
-												marginTop: 10,
-												marginLeft: 5,
-											}}
+											className={classes.newUserGridContainer}
 											spacing={3}
 										>
 											<Grid item xs={7}>
-												<Box
-													style={{
-														display: "flex",
-														justifyContent: "space-between",
-														alignItems: "center",
-													}}
-												>
-													<Box
-														style={{
-															width: 35,
-															height: 35,
-															color: "#111",
-															backgroundColor: "#fff",
-															borderRadius: 50,
-															display: "flex",
-															justifyContent: "center",
-															alignItems: "center",
-														}}
-													>
-														{index + 1}
-													</Box>
-													<Box style={{ minWidth: 230 }}>
+												<Box className={classes.newUserGridItem}>
+													<Box className={classes.numberBox}>{index + 1}</Box>
+													<Box className={classes.newUserWidth}>
 														<Box>Username</Box>
 														<Box>{data.newUserName}</Box>
 														<Box>
-															<hr Style={{ width: 230 }} />
+															<hr className={classes.newUserWidth} />
 														</Box>
 													</Box>
 												</Box>
 											</Grid>
 											<Grid item xs={5}>
-												<Box style={{ width: 230 }}>
+												<Box className={classes.newUserWidth}>
 													<Box>Email</Box>
 													<Box>{data.newUserEmail}</Box>
 													<Box>
-														<hr Style={{ width: 230 }} />
+														<hr className={classes.newUserWidth} />
 													</Box>
 												</Box>
 											</Grid>

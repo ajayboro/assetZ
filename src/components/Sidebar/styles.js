@@ -27,8 +27,8 @@ export const useStyles = makeStyles({
 
 	icon: {
 		marginRight: 10,
-		fill: "white",
 	},
+
 	link: {
 		textDecoration: "none",
 		color: "#1D3557",

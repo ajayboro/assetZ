@@ -54,6 +54,7 @@ const LoginForm = ({
 								type="text"
 								label="Username"
 								variant="filled"
+								autoComplete="off"
 							/>
 						</Grid>
 						<Grid item xs={12} className={classes.marginBottom}>

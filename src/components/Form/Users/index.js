@@ -7,26 +7,23 @@ const Users = ({ onChangeNewUser, newUserInputs }) => {
 	return (
 		<Container>
 			<form>
-				<Grid
-					container
-					style={{
-						maxWidth: 550,
-						marginTop: 20,
-						marginLeft: 30,
-					}}
-					spacing={3}
-				>
+				<Grid container className={classes.formGridContainer} spacing={3}>
 					<Grid item lg={6}>
 						<TextField
 							InputProps={{
 								className: classes.textField,
 							}}
+							InputLabelProps={{
+								className: classes.inputLabel,
+							}}
 							fullWidth
+							color="secondary"
 							onChange={onChangeNewUser}
 							value={newUserInputs.newUserName}
 							name="newUserName"
 							type="text"
 							label="Username"
+							autoComplete="off"
 						/>
 					</Grid>
 					<Grid item lg={6}>
@@ -34,7 +31,12 @@ const Users = ({ onChangeNewUser, newUserInputs }) => {
 							InputProps={{
 								className: classes.textField,
 							}}
+							InputLabelProps={{
+								className: classes.inputLabel,
+							}}
 							fullWidth
+							autoComplete="off"
+							color="secondary"
 							onChange={onChangeNewUser}
 							value={newUserInputs.newUserEmail}
 							name="newUserEmail"

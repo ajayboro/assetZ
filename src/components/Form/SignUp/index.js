@@ -56,6 +56,7 @@ const SignUpForm = ({
 								type="text"
 								label="Username"
 								variant="filled"
+								autoComplete="off"
 							/>
 						</Grid>
 						<Grid item xs={12} className={classes.marginBottom}>
@@ -78,6 +79,7 @@ const SignUpForm = ({
 								type="email"
 								label="Email"
 								variant="filled"
+								autoComplete="off"
 							/>
 						</Grid>
 						<Grid container spacing={2}>

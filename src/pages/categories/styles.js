@@ -7,6 +7,9 @@ export const useStyles = makeStyles({
 		padding: 30,
 		minHeight: "100vh",
 	},
+	userName: {
+		fontSize: 24,
+	},
 	wavingHand: {
 		marginLeft: 15,
 	},
@@ -38,6 +41,7 @@ export const useStyles = makeStyles({
 		width: 160,
 		height: 110,
 		border: "2px solid #FFFFFF",
+		borderTop: "7px solid  #E6DF39",
 		borderRadius: 7,
 		display: "flex",
 		justifyContent: "center",
@@ -71,5 +75,32 @@ export const useStyles = makeStyles({
 		alignItems: "center",
 		color: "#ffffff",
 		textTransform: "capitalize",
+	},
+
+	newUserGridContainer: {
+		maxWidth: 560,
+		marginTop: 10,
+		marginLeft: 5,
+	},
+
+	newUserGridItem: {
+		display: "flex",
+		justifyContent: "space-between",
+		alignItems: "center",
+	},
+
+	numberBox: {
+		width: 35,
+		height: 35,
+		color: "#111",
+		backgroundColor: "#fff",
+		borderRadius: 50,
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+	},
+
+	newUserWidth: {
+		minWidth: 230,
 	},
 });
