@@ -7,15 +7,17 @@ const Users = ({ onChangeNewUser, newUserInputs }) => {
 	return (
 		<Container>
 			<form>
-				<Grid container className={classes.formGridContainer} spacing={3}>
+				<Grid container spacing={3} className={classes.formGridContainer}>
 					<Grid item lg={6}>
 						<TextField
 							InputProps={{
 								className: classes.textField,
+								disableUnderline: true,
 							}}
 							InputLabelProps={{
 								className: classes.inputLabel,
 							}}
+							className={classes.underline}
 							fullWidth
 							color="secondary"
 							onChange={onChangeNewUser}
@@ -30,18 +32,20 @@ const Users = ({ onChangeNewUser, newUserInputs }) => {
 						<TextField
 							InputProps={{
 								className: classes.textField,
+								disableUnderline: true,
 							}}
 							InputLabelProps={{
 								className: classes.inputLabel,
 							}}
+							className={classes.underline}
 							fullWidth
-							autoComplete="off"
 							color="secondary"
 							onChange={onChangeNewUser}
 							value={newUserInputs.newUserEmail}
 							name="newUserEmail"
 							type="email"
 							label="Email"
+							autoComplete="off"
 						/>
 					</Grid>
 				</Grid>

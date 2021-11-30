@@ -45,6 +45,7 @@ const RightDrawer = ({
 						onChange={onChangeDataInputs}
 						value={dataInputs.category}
 						label="Category name"
+						autoComplete="off"
 					/>
 					<TextField
 						fullWidth
@@ -53,6 +54,7 @@ const RightDrawer = ({
 						onChange={onChangeDataInputs}
 						value={dataInputs.assetId}
 						label="Asset ID"
+						autoComplete="off"
 					/>
 					<MuiPickersUtilsProvider utils={DateFnsUtils}>
 						<KeyboardDatePicker
@@ -87,6 +89,7 @@ const RightDrawer = ({
 						value={dataInputs.assignTo}
 						className={classes.textFieldMargin}
 						label="Asset Assigned to"
+						autoComplete="off"
 					/>
 				</form>
 			</Box>

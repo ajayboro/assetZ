@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
 	TableContainer,
 	Table,
@@ -8,41 +8,33 @@ import {
 	TableCell,
 } from "@material-ui/core";
 
-const DataTable = () => {
-	const [apiDatas, setApiDatas] = useState([]);
-
-	useEffect(() => {
-		fetch("https://jsonplaceholder.typicode.com/users")
-			.then(response => {
-				return response.json();
-			})
-			.then(data => {
-				setApiDatas(data);
-			});
-	}, []);
-
+const DataTable = ({ datas }) => {
 	return (
-		<TableContainer style={{ backgroundColor: "#ffffff" }}>
+		<TableContainer style={{ backgroundColor: "#ffffff", borderRadius: 10 }}>
 			<Table>
-				<TableHead>
+				<TableHead style={{ backgroundColor: " #E6DF39" }}>
 					<TableRow>
 						<TableCell>Name</TableCell>
-						<TableCell>UserName</TableCell>
-						<TableCell>Email</TableCell>
-						<TableCell>Phone</TableCell>
-						<TableCell>Website</TableCell>
+						<TableCell>Category</TableCell>
+						<TableCell>Asset ID</TableCell>
+						<TableCell>Date of Assignment</TableCell>
+						<TableCell>Assign To</TableCell>
+						<TableCell>Status</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{apiDatas.map(data => (
-						<TableRow key={data.id}>
+					{datas.map((data, index) => (
+						<TableRow key={index}>
 							<TableCell component="th" scope="row">
-								{data.name}
+								{data.assignTo}
 							</TableCell>
-							<TableCell>{data.username}</TableCell>
-							<TableCell>{data.email}</TableCell>
-							<TableCell>{data.phone}</TableCell>
-							<TableCell>{data.website}</TableCell>
+							<TableCell>{data.category}</TableCell>
+							<TableCell>{data.assetId}</TableCell>
+							<TableCell>
+								{data.dateOfAssignment.toLocaleDateString()}
+							</TableCell>
+							<TableCell>{data.assignTo}</TableCell>
+							<TableCell>{data.assetStatus}</TableCell>
 						</TableRow>
 					))}
 				</TableBody>

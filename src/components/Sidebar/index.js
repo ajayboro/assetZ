@@ -8,7 +8,7 @@ import CategoriesIcon from "../../assets/icons/categoriesIcon.svg";
 import LogoutIcon from "../../assets/icons/logoutIcon.svg";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ setAssetLogs }) => {
 	const classes = useStyles();
 	return (
 		<Box className={classes.boxContainer}>
@@ -24,20 +24,17 @@ const Sidebar = () => {
 			</Box>
 
 			<Box className={classes.menuContainer}>
-				<Link to="/categories" className={classes.link}>
-					<Box className={classes.btn}>
-						<img className={classes.icon} src={CategoriesIcon} alt="" />
-						Categories
-					</Box>
-				</Link>
-				<Link to="/assetlogs" className={classes.link}>
-					<Box className={classes.btn}>
-						<img className={classes.icon} src={AssetLogsIcon} alt="" />
-						AssetLogs
-					</Box>
-				</Link>
-
-				<Link to="./login" className={classes.link}>
+				<Box onClick={() => setAssetLogs(true)} className={classes.btn}>
+					<img className={classes.icon} src={CategoriesIcon} alt="" />
+					Categories
+				</Box>
+				{/* <Link to="/categories" className={classes.link}></Link> */}
+				{/* <Link to="" className={classes.link}></Link> */}
+				<Box onClick={() => setAssetLogs(false)} className={classes.btn}>
+					<img className={classes.icon} src={AssetLogsIcon} alt="" />
+					AssetLogs
+				</Box>
+				<Link to="/" className={classes.link}>
 					<Box className={classes.btn}>
 						<img className={classes.icon} src={LogoutIcon} alt="" /> Logout
 					</Box>

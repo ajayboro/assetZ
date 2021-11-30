@@ -47,5 +47,6 @@ export const useStyles = makeStyles({
 		height: 70,
 		fontSize: 18,
 		fontWidht: 600,
+		textTransform: "capitalize",
 	},
 });

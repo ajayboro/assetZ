@@ -1,12 +1,12 @@
 import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles({
-	container: {
-		backgroundColor: "#1D3557",
-		color: "#ffffff",
-		padding: 30,
-		minHeight: "100vh",
-	},
+	// container: {
+	// 	backgroundColor: "#1D3557",
+	// 	color: "#ffffff",
+	// 	padding: 30,
+	// 	minHeight: "100vh",
+	// },
 
 	userName: {
 		fontSize: 24,
